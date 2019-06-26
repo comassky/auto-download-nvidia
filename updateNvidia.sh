@@ -1,4 +1,5 @@
 #!/bin/bash
+FOLDER="/root/nvidiaDrivers/"
 
 LATEST=$(curl --silent http://download.nvidia.com/XFree86/Linux-x86_64/latest.txt)
 IFS=' ' read -r -a array <<< "$LATEST"
@@ -22,7 +23,7 @@ then
  read -p "Do you wish to update Nvidia driver ($INSTALLED_DRIVER => ${array[0]}) ? Y/n : " yn
   case $yn in
         [Nn]* ) exit;;
-            * ) wget  --no-check-certificate -P /root/nvidiaDrivers "https://international.download.nvidia.com/XFree86/Linux-x86_64/${array[1]}"; chmod +x "/root/nvidiaDrivers/$NAME";;
+            * ) wget  --no-check-certificate -P "$FOLDER" "https://international.download.nvidia.com/XFree86/Linux-x86_64/${array[1]}"; chmod +x "$FOLDER/$NAME";;
   esac
 fi
 
