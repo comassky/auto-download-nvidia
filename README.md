@@ -4,8 +4,9 @@ Just a bash to scan installed driver, get the latest version number on Nvidia se
 
 # Usage
 
-bash updateNvidia.sh <directoryPath>
+bash updateNvidia.sh 
 
+bash updateNvidia.sh -f to force download the latest
 
 ```
 
