@@ -21,7 +21,7 @@ fi
 echo "********************************************"
 echo ""
 
-if [ "${array[0]}" != "$INSTALLED_DRIVER" ]
+if [ "${array[0]}" != "$INSTALLED_DRIVER" ] && [  "${array[0]}" != "" ]
 then
  read -p "Do you wish to update Nvidia driver ($INSTALLED_DRIVER => ${array[0]}) ? Y/n : " yn
   case $yn in
